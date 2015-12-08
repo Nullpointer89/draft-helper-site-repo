@@ -37,84 +37,115 @@ ul#herolist li{
 div.DefaultHeroFrame{
 	display:inline;
     opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+
+}
+
+
+div.GreyedHeroFrame{
+    border: 50px solid #ccc;
+
+}
+div.BlackHeroFrame{
+    border: 20px solid #aaaa;
 
 }
 
 
 
 </style>
+<script>
+	var Block = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","Butcher","Thrall","Uther","Zeratul"];
+	var BlockVariants = ["LtMorales","Johanna"];
+	function highlightHeroes( heroArray ){
+	
+		document.getElementById( "wtfTEST" ).innerHTML = Block;
+		document.getElementById( "Abathur" ).className = "GreyedHeroFrame";
+		//document.getElementById( "Abathur" ).className += "BlackHeroFrame";
+	
+		heroArrayLength = heroArray.length;
+		
+		var testString = "START " +""
+		
+		for(var i = heroArray.length; i>0;i-- ){
+			document.getElementById( heroArray[heroArrayLength] ).innerHTML = heroArray[heroArrayLength] ;
+		}
+		return;
+	}
+	
+</script>
 </head>
 <body>
+<button onclick=highlightHeroes(Block)>"Highlight Block List"</button>
 <ul id="herolist">
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Anubarak">
-			<img src="HotS_Images\Hero_Icons\Anubarak.png">\
+			<img src="HotS_Images\Hero_Icons\Anubarak.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Arthas">
-			<img src="HotS_Images\Hero_Icons\Arthas.png">\
+			<img src="HotS_Images\Hero_Icons\Arthas.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Azmodan">
-			<img src="HotS_Images\Hero_Icons\Azmodan.png">\
+			<img src="HotS_Images\Hero_Icons\Azmodan.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
 		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">\
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
@@ -137,7 +168,7 @@ Tokyo<br>
 London is the capital city of England. It is the most populous city in the United Kingdom,
 with a metropolitan area of over 13 million inhabitants.
 </p>
-<p>
+<p id="wtfTEST">
 Standing on the River Thames, London has been a major settlement for two millennia,
 its history going back to its founding by the Romans, who named it Londinium.
 </p>
