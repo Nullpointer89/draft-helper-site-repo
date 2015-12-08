@@ -1,0 +1,1778 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en-us" class="no-js">
+<!--<![endif]-->
+<head>
+    <!-- TODO: Optimize when to include tinymce -->
+    <script type="text/javascript" src="http://static-storm-new.cursecdn.com/1-0-5744-23387/js/tinymce/tiny_mce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        var cgeo = "US";
+        var aconf = {"r_us_floor":0.0,"r_row_floor":0.0,"p_us_floor":0.0,"p_row_floor":0.0,"ca_us_floor":0.0,"ca_row_floor":0.0,"ox_us_floor":2.4,"ox_row_floor":1.5,"am_us_floor":0.0,"am_row_floor":0.0,"mob_floor":0.0};
+    </script>
+    <meta charset="UTF-8">
+    <title>Falstad - Hero Talent Calculator </title>
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#121212" />
+
+    <!-- Responsive Meta Tag -->
+    
+        <link rel="shortcut icon" href="http://media.heroesnexus.com/avatars/thumbnails/8/165/16/16/635284295074939897.png" />
+        
+
+    <!-- Links -->
+    
+    
+
+    <!-- Meta Properties -->
+    
+    
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="http://static-storm-new.cursecdn.com/1-0-5744-23387/Skins/Blocks/css/compiled.css"/>
+<link rel="stylesheet" type="text/css" href="http://static-storm-new.cursecdn.com/1-0-5744-23387/Skins/Storm/css/compiled.css"/>
+<style type="text/css">
+.p-article-a .p-article-content p, .p-comments .p-comment-wrapper .p-comment-content .u-typography-format p:not(.role):not(.byline) {
+  margin-bottom: 24px !important;
+}
+
+
+body.body-herobuild-details header:not(.main):not(.no-nav):not(.related-header) form.rating-form { z-index: 3 !important; }
+
+.bqitalics, .bqitalics p { color: white !important; font-style: italic !important; }
+
+.p-comments-b .p-comment-content blockquote.blizzard {
+  color: #ccc;
+  background: #171717;
+  border: 1px solid #0d0e12;
+}
+
+
+body.ad-skin #site {
+  background: none; }
+body.ad-skin #site-main {
+  background: none !important;
+  background-position: center top;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
+body.ad-skin .p-header-c h1.logo {
+  margin-left: 0; }
+body.ad-skin .p-header-c .b-search-a {
+  right: 10px; }
+body.ad-skin .p-header-c .b-social-networks {
+  right: 310px; }
+body.ad-skin .ad-container .ad-bin .ad-placement.ad-badge {
+  margin-right: 0; }
+
+
+
+
+.body-herochampion-details div.p-talentdetails-wrapper ul li a img { height: 64px; width: 64px; }
+
+
+#site {
+    background-position: center top;
+}
+
+
+span.user-role-community-manager {
+    color: #0085ff;
+    padding-left: 16px;
+    min-height: 16px;
+    display: inline-block;
+    background: url(http://static-storm-new.cursecdn.com/1-0-5715-22903/Skins/Storm/images/icons/12x12/icon-staff-12x12.png) no-repeat left center;
+}
+
+
+.p-article-content th {
+  background-color: #181a2a;
+  background-image: -webkit-linear-gradient(top,#202339,#181a2a);
+  background-image: -moz-linear-gradient(top,#202339,#181a2a);
+  background-image: -ms-linear-gradient(top,#202339,#181a2a);
+  background-image: -o-linear-gradient(top,#202339,#181a2a);
+  background-image: linear-gradient(top,#202339,#181a2a);
+  border: 1px solid #343857;
+  padding: 4px 8px;
+  color: white;
+  font-size: 12px;
+}
+
+
+.p-article-a .p-article-header .p-article-title {
+  font-size: 19px; 
+}
+
+.p-article-a .p-article-header .p-article-category {
+  display: none; 
+}
+
+
+blockquote.heroesnexuscom {
+  background: #171717;
+  border: 1px solid #0d0e12;
+}
+
+blockquote.heroesnexuscom .quote-source {
+  background: url(http://media-storm.cursecdn.com/attachments/0/183/icon-staff-12x12.png) left 0 no-repeat;
+  padding-left: 20px;
+  line-height: 12px;
+  border-bottom: 1px dotted #383838;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+blockquote.heroesnexuscom .quote-body .quote-source~* {
+  color: #AD61DB;
+}
+
+blockquote.heroesnexuscom b, blockquote.heroesnexuscom strong {
+  color: #FFF;
+}
+
+blockquote.heroesnexuscom ul:last-child {
+  margin: 0;
+}
+
+blockquote.blizzard b, blockquote.blizzard strong {
+  color: #FFF;
+}
+
+blockquote.blizzard ul {
+  color: #0085ff;
+}
+
+
+
+.forum-post-body th {
+  background-color: #181a2a;
+  background-image: -webkit-linear-gradient(top,#202339,#181a2a);
+  background-image: -moz-linear-gradient(top,#202339,#181a2a);
+  background-image: -ms-linear-gradient(top,#202339,#181a2a);
+  background-image: -o-linear-gradient(top,#202339,#181a2a);
+  background-image: linear-gradient(top,#202339,#181a2a);
+  border: 1px solid #343857;
+  padding: 4px 8px;
+  color: white;
+  font-size: 12px;
+}
+
+.forum-post-body td {
+  background-color: #1b1b29;
+  border: 1px solid #2f2f48;
+}
+
+.t-hero-details section.t-hero-abilities .t-hero-ability .t-ability-desc br
+{
+display:inline !important;
+}
+
+.recent-blue-posts a.community-forum-thread-admin-post { color: #5c98d5 !important;}
+
+
+
+.body-herotalent-talentcalcdetails .demon-hunter, .body-herotalent-talentcalc .demon-hunter {
+background-image: url(http://static-storm-new.cursecdn.com/1-0-5193-19665/Skins/Storm/images/hero-bgs/tc-bg-demonhunter.png);
+}
+
+blockquote.blizzard em {
+  color: white;
+}
+
+.p-article-title {
+width: 800px !important;
+}
+
+
+.hero-header {
+background-image:url('http://media.heroesnexus.com/attachments/0/245/635294776870672685.png');
+width:100%;
+height:55px;
+border:2px solid #293269;
+padding:0px;
+line-height:50px;
+font-size:30px;
+}
+
+del {
+color:red;
+}
+
+ins {
+background-color:green;
+}
+
+
+.hero-icon{
+margin:3px;
+margin-right:15px;
+width:45px;
+height:45px;
+border:2px solid black;
+float:left;
+}
+.hero-holder {
+width:950px;
+
+margin:0px auto;
+background-color:#15191d;
+border: 1px solid #343857;
+text-align:left;
+
+}
+
+.ability-holder {
+border: 1px solid #343857;
+background-color:#1e2029;
+
+width: 900px;
+padding:8px;
+margin: 10px auto 10px auto;
+
+
+
+}
+.thetable tr {
+border:0px !important;
+background-color:#1e2029 !important;
+margin:0px !important;
+}
+.thetable  {
+border:0px !important;
+margin:0px !important;
+background-color:#1e2029 !important;
+
+}
+.thetable td {
+border:0px !important;
+background-color:#1e2029 !important;
+
+}
+.ability-pic{
+padding:0px;
+width:80px;
+vertical-align:top !important;
+
+}
+.pic-ability {
+width:40px;
+height:40px;
+}
+.changes {
+
+padding:0px !important;
+margin-bottom:0px !important;
+margin-left:15px !important;
+
+}
+
+.hero-talent-holder {
+background-color:#22242f;
+border: 1px solid #343857;
+
+
+width: 840px;
+padding:8px;
+margin: 10px auto 10px auto;
+
+}
+
+.hero-talent-image {
+width:35px;
+height:35px;
+}
+
+
+.changes-hero-talent{
+padding:0px !important;
+margin-bottom:0px !important;
+margin-left:15px !important;
+
+}
+.patch-talent-table tr {
+border:0px !important;
+background-color:#22242f !important;
+margin:0px !important;
+}
+.patch-talent-table  {
+border:0px !important;
+margin:0px !important;
+background-color:#22242f !important;
+
+}
+.patch-talent-table td {
+border:0px !important;
+background-color:#22242f !important;
+
+}
+
+.t-heroes {
+  background-image: url(http://media.heroesnexus.com/attachments/1/408/heroes-bg-tall.jpg);
+}
+
+
+.news-heroes-bundle {
+    display: inline-block;
+    position: relative;
+    width: 180px;
+}
+
+.news-heroes-bundle .bundle-name {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    background: rgba(0,0,0,0.5);
+}
+
+.news-heroes-bundle .bundle-characters  {
+    position: absolute;
+    bottom: 21px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+}
+
+.news-heroes-bundle .bundle-characters ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news-heroes-bundle img {
+    width: 180px;
+    border: 2px solid black;
+}
+
+
+.thread-prefix.hero-thread-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  border: 1px solid #343857;
+  background: url(http://media.heroesnexus.com/attachments/2/448/sprite-monk.png);
+}
+
+
+
+.thread-prefix.hero-thread-icon.abathur { background-position: -0px -0px }
+.thread-prefix.hero-thread-icon.anubarak { background-position: -24px -0px }
+.thread-prefix.hero-thread-icon.arthas { background-position: -48px -0px }
+.thread-prefix.hero-thread-icon.azmodan { background-position: -72px -0px }
+.thread-prefix.hero-thread-icon.brightwing { background-position: -96px -0px }
+.thread-prefix.hero-thread-icon.chen { background-position: -120px -0px }
+.thread-prefix.hero-thread-icon.diablo { background-position: -144px -0px }
+.thread-prefix.hero-thread-icon.etc { background-position: -168px -0px }
+.thread-prefix.hero-thread-icon.falstad { background-position: -192px -0px }
+.thread-prefix.hero-thread-icon.gazlowe { background-position: -216px -0px }
+.thread-prefix.hero-thread-icon.illidan { background-position: -240px -0px }
+.thread-prefix.hero-thread-icon.kerrigan { background-position: -264px -0px }
+.thread-prefix.hero-thread-icon.lili { background-position: -288px -0px }
+.thread-prefix.hero-thread-icon.malfurion { background-position: -312px -0px }
+.thread-prefix.hero-thread-icon.muradin { background-position: -336px -0px }
+.thread-prefix.hero-thread-icon.murky { background-position: -360px -0px }
+.thread-prefix.hero-thread-icon.nazeebo { background-position: -384px -0px }
+.thread-prefix.hero-thread-icon.nova { background-position: -408px -0px }
+.thread-prefix.hero-thread-icon.raynor { background-position: -432px -0px }
+.thread-prefix.hero-thread-icon.rehgar { background-position: -456px -0px }
+.thread-prefix.hero-thread-icon.sgthammer { background-position: -480px -0px }
+.thread-prefix.hero-thread-icon.sonya { background-position: -504px -0px }
+.thread-prefix.hero-thread-icon.stitches { background-position: -528px -0px }
+.thread-prefix.hero-thread-icon.tassadar { background-position: -552px -0px }
+.thread-prefix.hero-thread-icon.tychus { background-position: -576px -0px }
+.thread-prefix.hero-thread-icon.tyrael { background-position: -600px -0px }
+.thread-prefix.hero-thread-icon.tyrande { background-position: -624px -0px }
+.thread-prefix.hero-thread-icon.uther { background-position: -648px -0px }
+.thread-prefix.hero-thread-icon.valla { background-position: -672px -0px }
+.thread-prefix.hero-thread-icon.zeratul { background-position: -696px -0px }
+.thread-prefix.hero-thread-icon.jaina { background-position: -720px -0px }
+.thread-prefix.hero-thread-icon.thrall { background-position: -744px -0px }
+.thread-prefix.hero-thread-icon.zagara { background-position: -768px -0px }
+.thread-prefix.hero-thread-icon.thelostvikings { background-position: -792px -0px }
+.thread-prefix.hero-thread-icon.sylvanas { background-position: -816px -0px }
+.thread-prefix.hero-thread-icon.kaelthas { background-position: -840px -0px }
+.thread-prefix.hero-thread-icon.leoric { background-position: -864px -0px }
+.thread-prefix.hero-thread-icon.johanna { background-position: -888px -0px }
+.thread-prefix.hero-thread-icon.kharazim { background-position: -912px -0px }
+.thread-prefix.hero-thread-icon.thebutcher { background-position: -936px -0px }
+
+
+
+blockquote.prettyquote {
+    background: #171717;
+    border: 1px solid #0d0e12;
+}
+blockquote.prettyquote .quote-source {
+    padding-left: 30px;
+    line-height: 12px;
+    border-bottom: 1px dotted #383838;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}</style>
+
+    
+    
+    <script type="text/javascript">
+      var onloadCallback = function () {
+                Cobalt.runOnHtmlInsert(Cobalt.Forms.handlegReCaptchaRender);
+          };
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer></script>
+   <script src="https://apis.google.com/js/platform.js"></script>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="http://static-storm-new.cursecdn.com/1-0-5744-23387/js/core.js"></script>
+    
+    
+
+ 
+ <script>
+var script = document.createElement('script');
+var tstamp = new Date();
+script.id = 'factorem';
+script.src = 'http://cdm.cursecdn.com/js/heroesnexus/cdmfactorem_min.js?misc=' + tstamp.getTime();
+script.async = false;
+script.type='text/javascript';
+document.head.appendChild(script);
+</script> 
+     
+</head>
+<body class="grid-a  site-heroesnexus site-heroesnexus body-herotalent body-herotalent-talentcalcdetails show-ads user-anonymous lang-en site-lang-en template-none skin-light-on-dark responsive-disabled" data-user-lang="1">    
+    <!-- No Script -->
+    <noscript class="b-noscript">
+        <p><i class="b-noscript-icon"></i> This site works best with JavaScript enabled. Please enable JavaScript to get the best experience from this site.</p>
+    </noscript>
+    <!-- Layout Start -->
+    
+    
+    <div id="site" class="fixed single-column">
+        <div id="site-main">
+            <!-- Above Header, ex: Netbar -->
+            
+
+<div class="netbar">
+    <span class="netbar-logo netbar-left"><a href="http://www.curse.com/">Curse</a></span>
+    
+        <a class="netbar-left netbar-help" href="http://support.curse.com/">Help</a>
+        <a href="/register" id="register-link" class="netbar-signin netbar-right">Register</a>
+        <a href="/login" id="login-link" class="netbar-signin netbar-right">Sign In</a>
+    
+</div>
+
+            <!-- Header, ex: Logo, search, etc. -->
+            <header class="main" role="banner">
+                <h1><a class="logo" href="http://www.heroesnexus.com/">Heroes Nexus</a></h1><ul class="b-social-networks">
+<li><a class="b-social-youtube" href="http://www.youtube.com/user/TheHeroesNexus" target="_blank">Subscribe On YouTube</a></li>
+<li><a class="b-social-twitter" href="http://www.twitter.com/heroes_nexus" target="_blank">Follow Us On Twitter</a></li>
+<li><a class="b-social-facebook" href="https://www.facebook.com/theheroesnexus" target="_blank">Like Us On Facebook</a></li>
+</ul>
+
+<form class="primary-search b-search b-search-a" action="/search" method="get">
+    <input type="search" name="search" placeholder="Search Heroes Nexus" data-autocomplete-search-url="/find" data-autocomplete-width="337" data-min-chars="3" data-max-results="15" class="b-search-input ac_input" autocomplete="off">
+    <input type="submit" value="Search" />
+</form>
+
+            </header>
+            <!-- Below Header (Ad container), ex: Leaderboard and Badge unit -->
+            <section class="ad-container">
+                <div class="ad-bin">
+                    
+        <div class="ad-placement ad-leaderboard ">
+            <script>
+(function () {
+var num = window.innerWidth < 680 ? '00' : '01';
+document.write('<div id="cdm-zone-' + num + '"></div>');
+})();
+</script>
+        </div>
+
+    
+        <div class="ad-placement ad-badge ad-atf-badge ad-atf ad-badge ad-placement">
+            <div id='cdm-zone-0b'></div> 
+        </div>
+
+    
+                </div>
+            </section>
+            <!-- Above Content, Ex: Breadcrumbs -->
+            <section class="atf" role="complementary">
+<div class="page-region gray-block-wrapper">
+
+<div class="page-block ">
+
+<nav class="main p-nav p-nav-a j-sticky" role="navigation">
+    <ul class="b-list b-list-a">
+        
+
+    <li id="nav-view-builds" class=" b-list-item p-nav-item">
+            
+            <a href="/builds"  class=""><span class="b-list-label">View Builds
+     </span></a>
+            
+    </li>
+
+
+    <li id="nav-create-a-build" class=" b-list-item p-nav-item">
+            
+            <a href="/builds/create"  class=""><span class="b-list-label">Create a Build
+     </span></a>
+            
+    </li>
+
+
+    <li id="nav-blue-tracker" class=" b-list-item p-nav-item">
+            
+            <a href="/blue-tracker"  class=""><span class="b-list-label">Blue Tracker
+     </span></a>
+            
+    </li>
+
+
+    <li id="nav-heroes" class=" b-list-item p-nav-item">
+            
+            <a href="/heroes"  class=""><span class="b-list-label">Heroes
+     </span></a>
+            
+    </li>
+
+
+    <li id="nav-talent-calculator" class=" b-list-item p-nav-item">
+            
+            <a href="/talent-calculator"  class=""><span class="b-list-label">Talent Calculator
+     </span></a>
+            
+    </li>
+
+
+    <li id="nav-forums" class=" b-list-item p-nav-item">
+            
+            <a href="/forums"  class=""><span class="b-list-label">Forums
+     </span></a>
+            
+    </li>
+
+
+    <li id="nav-esports-wiki" class=" b-list-item p-nav-item">
+            
+            <a href="http://heroesofthestorm.gamepedia.com/Stormpedia"  class=""><span class="b-list-label">Esports Wiki
+     </span></a>
+            
+    </li>
+
+
+    <li id="nav-streams" class=" b-list-item p-nav-item">
+            
+            <a href="/streams"  class=""><span class="b-list-label">Streams
+     </span></a>
+            
+    </li>
+
+    </ul>
+    <a id="responsive-topnav-button" class="rs-link rs-link-to-desktop">Desktop View</a>
+    
+</nav>
+</div>
+    <!-- BREADCRUMBS -->
+    <nav class="b-breadcrumb b-breadcrumb-a">
+
+        <!-- WRAPPER -->
+        <ul class="b-breadcrumb-wrapper">
+
+            
+                <!-- ITEM -->
+                <li class="b-breadcrumb-item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                
+                        <a href="/" rel="up" itemprop="url"><span itemprop="title">Home</span></a>
+                
+                </li>
+            
+                <!-- ITEM -->
+                <li class="b-breadcrumb-item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                
+                        <span itemprop="title">Talent Calculator</span>
+                
+                </li>
+            
+                <!-- ITEM -->
+                <li class="b-breadcrumb-item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                
+                        <span itemprop="title">Falstad</span>
+                
+                </li>
+            
+
+        </ul>
+    </nav>
+
+</div>
+</section>
+            <div class="container">
+                <div id="content" class="main content-container">
+                    <section class="primary-content" role="main">
+                        
+
+
+
+
+    <div class="details t-hero-select">
+        <header>
+            <p>Talent Calculator</p>
+            <p>Select a Hero to begin</p>
+        </header>
+        <div class="t-heroes champ-select u-typography-format">
+            <ul class="b-list b-list-a b-list_inlineBlock">
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="2">
+                        <a href="/talent-calculator/2-abathur">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/813/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Abathur</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="38">
+                        <a href="/talent-calculator/38-anubarak">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/45/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Anub&#x27;arak</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="60">
+                        <a href="/talent-calculator/60-artanis">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/54/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Artanis</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="24">
+                        <a href="/talent-calculator/24-arthas">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/27/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Arthas</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="39">
+                        <a href="/talent-calculator/39-azmodan">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/795/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Azmodan</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="26">
+                        <a href="/talent-calculator/26-brightwing">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/36/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Brightwing</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="36">
+                        <a href="/talent-calculator/36-chen">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/72/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Chen</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="63">
+                        <a href="/talent-calculator/63-cho">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/267/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Cho</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="21">
+                        <a href="/talent-calculator/21-diablo">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/2/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Diablo</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="20">
+                        <a href="/talent-calculator/20-e-t-c">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/994/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">E.T.C.</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="11">
+                        <a href="/talent-calculator/11-falstad">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/912/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Falstad</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="64">
+                        <a href="/talent-calculator/64-gall">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/277/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Gall</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="5">
+                        <a href="/talent-calculator/5-gazlowe">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/854/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Gazlowe</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="10">
+                        <a href="/talent-calculator/10-illidan">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/904/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Illidan</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="41">
+                        <a href="/talent-calculator/41-jaina">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/91/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Jaina</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="49">
+                        <a href="/talent-calculator/49-johanna">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/83/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Johanna</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="50">
+                        <a href="/talent-calculator/50-kaelthas">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/100/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Kael&#x27;thas</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="12">
+                        <a href="/talent-calculator/12-kerrigan">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/922/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Kerrigan</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="56">
+                        <a href="/talent-calculator/56-kharazim">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/138/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Kharazim</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="52">
+                        <a href="/talent-calculator/52-leoric">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/109/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Leoric</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="28">
+                        <a href="/talent-calculator/28-li-li">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/805/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Li Li</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="61">
+                        <a href="/talent-calculator/61-lt-morales">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/129/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Lt. Morales</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="16">
+                        <a href="/talent-calculator/16-malfurion">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/956/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Malfurion</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="22">
+                        <a href="/talent-calculator/22-muradin">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/11/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Muradin</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="30">
+                        <a href="/talent-calculator/30-murky">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/146/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Murky</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="4">
+                        <a href="/talent-calculator/4-nazeebo">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/843/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Nazeebo</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="14">
+                        <a href="/talent-calculator/14-nova">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/939/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Nova</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="3">
+                        <a href="/talent-calculator/3-raynor">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/833/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Raynor</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="34">
+                        <a href="/talent-calculator/34-rehgar">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/825/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Rehgar</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="57">
+                        <a href="/talent-calculator/57-rexxar">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/155/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Rexxar</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="17">
+                        <a href="/talent-calculator/17-sgt-hammer">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/964/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Sgt. Hammer</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="13">
+                        <a href="/talent-calculator/13-sonya">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/931/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Sonya</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="23">
+                        <a href="/talent-calculator/23-stitches">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/19/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Stitches</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="47">
+                        <a href="/talent-calculator/47-sylvanas">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/163/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Sylvanas</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="6">
+                        <a href="/talent-calculator/6-tassadar">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/863/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Tassadar</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="54">
+                        <a href="/talent-calculator/54-the-butcher">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/62/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">The Butcher</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="45">
+                        <a href="/talent-calculator/45-the-lost-vikings">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/119/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">The Lost Vikings</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="43">
+                        <a href="/talent-calculator/43-thrall">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/175/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Thrall</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="9">
+                        <a href="/talent-calculator/9-tychus">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/890/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Tychus</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="19">
+                        <a href="/talent-calculator/19-tyrael">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/985/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Tyrael</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="7">
+                        <a href="/talent-calculator/7-tyrande">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/871/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Tyrande</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="8">
+                        <a href="/talent-calculator/8-uther">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/880/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Uther</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="15">
+                        <a href="/talent-calculator/15-valla">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/948/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Valla</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="32">
+                        <a href="/talent-calculator/32-zagara">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/560/183/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Zagara</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+				    <li class="b-list-item hero-champion" data-tc-heroid="18">
+                        <a href="/talent-calculator/18-zeratul">
+                            <figure class="b-figure b-figure-a portrait">
+                                <div class="u-frame u-frame-a">
+		                            
+                                        <div class="t-clipper"><img src="http://media.heroesnexus.com/avatars/thumbnails/559/976/65/65/icon.png" /></div>
+                                    
+                                </div>
+                                <figcaption class="caption name">Zeratul</figcaption>
+                            </figure> 
+                        </a>       
+				    </li>
+                
+			</ul>
+        </div>
+    </div>
+
+    <!-- Plugin Container -->
+	<div class="p-talentCalc p-talentCalc-a">
+        <div class="b-talentCalc-a">
+            
+            <div class="b-talentCalc-b">
+                <div class="b-talentCalc-c">
+                    <div class="secondary-avatar-container">
+                        <img src="http://media.heroesnexus.com/avatars/559/912/icon.png" width="58" height="58" />
+                    </div>
+                    <ul class="name-title-ul">
+                        <li><span class="hero-name">Falstad</span></li>
+                        <li><div class="hero-role role-assassin tip" title="Assassin"></div></li>
+                        <li><span class="hero-title">Wildhammer Thane</span></li>
+                    </ul>
+                    <div class="social-wrapper">
+                        <div class="p-talentCalc-social">
+                            <ul class="social-top-ul">
+                                <li><div class="social-link-button"></div></li>
+                                <input type="text" class="j-copy-link" onclick="$(this).select();" readonly />
+                                <script> $('.j-copy-link').val(location.href); </script>
+                            </ul>
+                            <ul class="social-bottom-ul">
+			                    <li><span>Share</span></li>
+                                <li><a href="#" class="social-reddit-button" target="_blank"></a></li>
+                                <li><a href="#" class="social-twitter-button popup"></a></li>
+                                <li><a href="#" class="social-facebook-button popup"></a></li>
+		                    </ul>
+                        </div>
+                    </div>
+                    <div class="skills-container">
+                        <ul class="hero-skills-ul">
+                            
+                                        <li data-ability-slot="Q" data-ability-name="Hammerang" class="">
+                                            <a data-tooltip-href="skill_55">
+                                                <img src="http://media.heroesnexus.com/avatars/559/916/icon.png">
+                                            </a>
+                                        </li>
+                                        
+                                        
+                                        <li data-ability-slot="W" data-ability-name="Lightning Rod" class="">
+                                            <a data-tooltip-href="skill_327">
+                                                <img src="http://media.heroesnexus.com/avatars/559/919/icon.png">
+                                            </a>
+                                        </li>
+                                        
+                                        
+                                        <li data-ability-slot="E" data-ability-name="Barrel Roll" class="">
+                                            <a data-tooltip-href="skill_58">
+                                                <img src="http://media.heroesnexus.com/avatars/559/920/icon.png">
+                                            </a>
+                                        </li>
+                                        
+                                        
+                                        <li data-ability-slot="R" data-ability-name="Mighty Gust" class="hidden">
+                                            <a data-tooltip-href="skill_325">
+                                                <img src="http://media.heroesnexus.com/avatars/559/914/icon.png">
+                                            </a>
+                                        </li>
+                                        
+                                        
+                                        <li data-ability-slot="R" data-ability-name="Hinterland Blast" class="hidden">
+                                            <a data-tooltip-href="skill_326">
+                                                <img src="http://media.heroesnexus.com/avatars/559/915/icon.png">
+                                            </a>
+                                        </li>
+                                        
+                                        
+                                        <li data-ability-slot="D" data-ability-name="Tailwind" class="">
+                                            <a data-tooltip-href="skill_243">
+                                                <img src="http://media.heroesnexus.com/avatars/559/913/icon.png">
+                                            </a>
+                                        </li>
+                                        
+                                        
+                                 <li class="ult-placeholder" data-ability-slot="R"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="b-talentCalc-d">
+                    <ul>
+                        <li>
+                            <span class="stats-h1">HP: </span>
+                            <span class="stats-value" id="hp">1365 </span>
+                            <span class="stats-per-level" id="hpPerLevel">(+4/LVL)</span>
+                        </li>
+                        <li>
+                            <span class="stats-h1">HP Regen: </span>
+                            <span class="stats-value" id="hpRegen">2.8437 </span>
+                            <span class="stats-per-level" id="hpRegenPerLevel">(+4/LVL)</span>
+                        </li>
+                        <li>
+                            <span class="stats-h2">Mana: </span>
+                            <span class="stats-value" id="mana">500 </span>
+                            <span class="stats-per-level" id="manaPerLevel">(+10/LVL)</span>
+                        </li>
+                        <li>
+                            <span class="stats-h2">Mana Regen: </span>
+                            <span class="stats-value" id="manaRegen">3 </span>
+                            <span class="stats-per-level" id="manaRegenPerLevel">(+0.0976/LVL)</span>
+                        </li>
+                        <li>
+                            <span class="stats-h3">Attack Damage: </span>
+                            <span class="stats-value" id="attackDamage">104 </span>
+                            <span class="stats-per-level" id="attackDamagePerLevel">(+4/LVL)</span>
+                        </li>
+                        <li>
+                            <span class="stats-h3">Attack Speed: </span>
+                            <span class="stats-value" id="attackSpeed">1.43 </span>
+                            <span class="stats-per-level" id="attackSpeedPerLevel">(+0/LVL)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="p-talentCalc-content falstad">
+                    <div class="tc-hero" style="background-image:url(http://media.heroesnexus.com/avatars/422/274/635705649573032516.png)" ></div>
+                    <section class="p-talentCalc-primary">
+                        <header class="p-talentCalc-header">
+                            
+                            <button class="p-talentCalc-reset u-button-z j-reset-all" style="display: none;">Reset</button>
+                            <h2>Talents</h2>
+                        </header>
+                        
+        <ul class="b-list b-list-a row">
+            <li class="b-list-item level">1</li>
+            
+                <li class="b-list-item talent" data-column="1" data-tier="0" data-id="1351" data-talent-name="Gathering Storm" data-tooltip-href="/talents/1351-gathering-storm">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/971/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="2" data-tier="0" data-id="727" data-talent-name="Updraft" data-tooltip-href="/talents/727-updraft">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/991/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="3" data-tier="0" data-id="967" data-talent-name="Seasoned Marksman" data-tooltip-href="/talents/967-seasoned-marksman">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/943/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="4" data-tier="0" data-id="984" data-talent-name="Bribe" data-tooltip-href="/talents/984-bribe">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/370/64/64/icon.png">
+                    </a>
+                </li>
+            
+        </ul>
+        
+        <ul class="b-list b-list-a row">
+            <li class="b-list-item level">4</li>
+            
+                <li class="b-list-item talent" data-column="1" data-tier="1" data-id="917" data-talent-name="Charged Up" data-tooltip-href="/talents/917-charged-up">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/979/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="2" data-tier="1" data-id="911" data-talent-name="Flow Rider" data-tooltip-href="/talents/911-flow-rider">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/973/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="3" data-tier="1" data-id="986" data-talent-name="Vampiric Assault" data-tooltip-href="/talents/986-vampiric-assault">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/372/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="4" data-tier="1" data-id="914" data-talent-name="Power Throw" data-tooltip-href="/talents/914-power-throw">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/976/64/64/icon.png">
+                    </a>
+                </li>
+            
+        </ul>
+        
+        <ul class="b-list b-list-a row">
+            <li class="b-list-item level">7</li>
+            
+                <li class="b-list-item talent" data-column="1" data-tier="2" data-id="555" data-talent-name="Battle Momentum" data-tooltip-href="/talents/555-battle-momentum">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/406/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="2" data-tier="2" data-id="915" data-talent-name="Secret Weapon" data-tooltip-href="/talents/915-secret-weapon">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/977/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="3" data-tier="2" data-id="127" data-talent-name="BOOMerang" data-tooltip-href="/talents/127-boomerang">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/238/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="4" data-tier="2" data-id="912" data-talent-name="Free Roll" data-tooltip-href="/talents/912-free-roll">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/974/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="5" data-tier="2" data-id="989" data-talent-name="First Aid" data-tooltip-href="/talents/989-first-aid">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/375/64/64/icon.png">
+                    </a>
+                </li>
+            
+        </ul>
+        
+        <ul class="b-list b-list-a row">
+            <li class="b-list-item level">10</li>
+            
+                <li class="b-list-item talent" data-column="1" data-tier="3" data-id="932" data-talent-name="Hinterland Blast" data-tooltip-href="/talents/932-hinterland-blast">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/239/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="2" data-tier="3" data-id="910" data-talent-name="Mighty Gust" data-tooltip-href="/talents/910-mighty-gust">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/972/64/64/icon.png">
+                    </a>
+                </li>
+            
+        </ul>
+        
+        <ul class="b-list b-list-a row">
+            <li class="b-list-item level">13</li>
+            
+                <li class="b-list-item talent" data-column="1" data-tier="4" data-id="994" data-talent-name="Giant Killer" data-tooltip-href="/talents/994-giant-killer">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/380/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="2" data-tier="4" data-id="348" data-talent-name="Crippling Hammer" data-tooltip-href="/talents/348-crippling-hammer">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/985/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="3" data-tier="4" data-id="920" data-talent-name="Thunderstrikes" data-tooltip-href="/talents/920-thunderstrikes">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/982/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="4" data-tier="4" data-id="919" data-talent-name="Static Shield" data-tooltip-href="/talents/919-static-shield">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/981/64/64/icon.png">
+                    </a>
+                </li>
+            
+        </ul>
+        
+        <ul class="b-list b-list-a row">
+            <li class="b-list-item level">16</li>
+            
+                <li class="b-list-item talent" data-column="1" data-tier="5" data-id="923" data-talent-name="Aerie Gusts" data-tooltip-href="/talents/923-aerie-gusts">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/988/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="2" data-tier="5" data-id="916" data-talent-name="Hammer Time" data-tooltip-href="/talents/916-hammer-time">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/978/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="3" data-tier="5" data-id="130" data-talent-name="Afterburner" data-tooltip-href="/talents/130-afterburner">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/241/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="4" data-tier="5" data-id="988" data-talent-name="Overdrive" data-tooltip-href="/talents/988-overdrive">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/559/374/64/64/icon.png">
+                    </a>
+                </li>
+            
+        </ul>
+        
+        <ul class="b-list b-list-a row">
+            <li class="b-list-item level">20</li>
+            
+                <li class="b-list-item talent" data-column="1" data-tier="6" data-id="922" data-talent-name="Call of the Wildhammer" data-tooltip-href="/talents/922-call-of-the-wildhammer">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/984/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="2" data-tier="6" data-id="921" data-talent-name="Wind Tunnel" data-tooltip-href="/talents/921-wind-tunnel">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/983/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="3" data-tier="6" data-id="965" data-talent-name="Nexus Frenzy" data-tooltip-href="/talents/965-nexus-frenzy">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/918/64/64/icon.png">
+                    </a>
+                </li>
+            
+                <li class="b-list-item talent" data-column="4" data-tier="6" data-id="913" data-talent-name="Epic Mount" data-tooltip-href="/talents/913-epic-mount">
+                    <a href="#" class="icon">
+                        <img src="http://media.heroesnexus.com/avatars/thumbnails/558/975/64/64/icon.png">
+                    </a>
+                </li>
+            
+        </ul>
+        
+                    </section>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+       <script type="text/javascript">
+           $(document).ready(function () {
+               Storm.TalentCalculator.initialize({"11":{"name":"Falstad","title":"Wildhammer Thane","abilities":[{"slot":"Q","name":"Hammerang","id":55,"avatar":"http://media.heroesnexus.com/avatars/559/916/icon.png","combined_tooltip":"\r\n\r\n\r\n\r\n<div class=\"storm-tooltip db-tooltip\" >\r\n    \r\n        <div class=\"db-image\">\r\n            <img src=\"http://media.heroesnexus.com/avatars/thumbnails/559/916/64/64/icon.png\"/>\r\n        </div>\r\n    \r\n    \r\n    <div class=\"db-description\">\r\n        <h3>Hammerang</h3>\r\n        <span class=\"t-hero-ability-mana\">70 Mana</span></br><span class=\"t-hero-ability-cooldown\">Cooldown: <span>10</span> seconds</span><div>Throw out a Hammer that returns to you, dealing <span>290</span> <small>(<span>138</span> + <span>4%</span> per level)</small> damage and slowing enemies by <span>25%</span> for <span>2</span> seconds.</div>\r\n    </div> \r\n\r\n</div>"},{"slot":"W","name":"Lightning Rod","id":327,"avatar":"http://media.heroesnexus.com/avatars/559/919/icon.png","combined_tooltip":"\r\n\r\n\r\n\r\n<div class=\"storm-tooltip db-tooltip\" >\r\n    \r\n        <div class=\"db-image\">\r\n            <img src=\"http://media.heroesnexus.com/avatars/thumbnails/559/919/64/64/icon.png\"/>\r\n        </div>\r\n    \r\n    \r\n    <div class=\"db-description\">\r\n        <h3>Lightning Rod</h3>\r\n        <span class=\"t-hero-ability-mana\">70 Mana</span></br><span class=\"t-hero-ability-cooldown\">Cooldown: <span>15</span> seconds</span><div>Deal <span>235</span> <small>(<span>112</span> + <span>4%</span> per level)</small> to an enemy, and an additional <span>165</span> <small>(<span>78</span> + <span>4%</span> per level)</small> damage per second for <span>4.25</span> seconds if you remain close to the target.</div>\r\n    </div> \r\n\r\n</div>"},{"slot":"E","name":"Barrel Roll","id":58,"avatar":"http://media.heroesnexus.com/avatars/559/920/icon.png","combined_tooltip":"\r\n\r\n\r\n\r\n<div class=\"storm-tooltip db-tooltip\" >\r\n    \r\n        <div class=\"db-image\">\r\n            <img src=\"http://media.heroesnexus.com/avatars/thumbnails/559/920/64/64/icon.png\"/>\r\n        </div>\r\n    \r\n    \r\n    <div class=\"db-description\">\r\n        <h3>Barrel Roll</h3>\r\n        <span class=\"t-hero-ability-mana\">75 Mana</span></br><span class=\"t-hero-ability-cooldown\">Cooldown: <span>14</span> seconds</span><div>Dashes forward and grants a <span>375</span> <small>(<span>178</span> + <span>4%</span> per level)</small> point Shield for <span>2</span> seconds.</div>\r\n    </div> \r\n\r\n</div>"},{"slot":"R","name":"Mighty Gust","id":325,"avatar":"http://media.heroesnexus.com/avatars/559/914/icon.png","combined_tooltip":"\r\n\r\n\r\n\r\n<div class=\"storm-tooltip db-tooltip\" >\r\n    \r\n        <div class=\"db-image\">\r\n            <img src=\"http://media.heroesnexus.com/avatars/thumbnails/559/914/64/64/icon.png\"/>\r\n        </div>\r\n    \r\n    \r\n    <div class=\"db-description\">\r\n        <h3>Mighty Gust</h3>\r\n        <span class=\"t-hero-ability-mana\">70 Mana</span></br><span class=\"t-hero-ability-cooldown\">Cooldown: <span>40</span> seconds</span><span class=\"t-hero-ability-type\">Heroic</span><div>Push enemies away, and slow their Movement Speed by <span>60%</span> decaying over <span>5</span> seconds.</div>\r\n    </div> \r\n\r\n</div>"},{"slot":"R","name":"Hinterland Blast","id":326,"avatar":"http://media.heroesnexus.com/avatars/559/915/icon.png","combined_tooltip":"\r\n\r\n\r\n\r\n<div class=\"storm-tooltip db-tooltip\" >\r\n    \r\n        <div class=\"db-image\">\r\n            <img src=\"http://media.heroesnexus.com/avatars/thumbnails/559/915/64/64/icon.png\"/>\r\n        </div>\r\n    \r\n    \r\n    <div class=\"db-description\">\r\n        <h3>Hinterland Blast</h3>\r\n        <span class=\"t-hero-ability-mana\">100 Mana</span></br><span class=\"t-hero-ability-cooldown\">Cooldown: <span>90</span> seconds</span><span class=\"t-hero-ability-type\">Heroic</span><div>After a short delay, deal <span>901</span> <small>(<span>428</span> + <span>4%</span> per level)</small> damage to enemies within a long line.</div>\r\n    </div> \r\n\r\n</div>"},{"slot":"D","name":"Tailwind","id":243,"avatar":"http://media.heroesnexus.com/avatars/559/913/icon.png","combined_tooltip":"\r\n\r\n\r\n\r\n<div class=\"storm-tooltip db-tooltip\" >\r\n    \r\n        <div class=\"db-image\">\r\n            <img src=\"http://media.heroesnexus.com/avatars/thumbnails/559/913/64/64/icon.png\"/>\r\n        </div>\r\n    \r\n    \r\n    <div class=\"db-description\">\r\n        <h3>Tailwind</h3>\r\n        <span class=\"t-hero-ability-cooldown\">Cooldown: <span>6</span> seconds</span><span class=\"t-hero-ability-type\">Trait</span><div>Gain <span>20%</span> increased Movement Speed after not taking damage for <span>6</span> seconds.</div>\r\n    </div> \r\n\r\n</div>"}],"avatar":"http://media.heroesnexus.com/avatars/559/912/icon.png","secondaryAvatar":"http://media.heroesnexus.com/avatars/559/911/icon.png","championData":{"hp":1365,"hpPerLevel":4,"hpRegen":2.8437,"hpRegenPerLevel":4.0,"mana":500,"manaPerLevel":10,"manaRegen":3.0,"manaRegenPerLevel":0.0976,"attackDamage":104,"attackDamagePerLevel":4,"attackSpeed":1.43,"attackSpeedPerLevel":0.0},"talents":[[{"ID":967,"Tier":1,"Index":3,"Name":"Seasoned Marksman","Url":"/talents/967-seasoned-marksman","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/943/64/64/icon.png","Tooltip":"<span>Seasoned Marksman</span><div>For every <span>6</span> enemy Minion or captured Mercenary kills near your Hero, gain <span>1</span> Basic Attack damage. Hero Takedowns count as <span>3</span> Minion kills.</div>"},{"ID":1351,"Tier":1,"Index":1,"Name":"Gathering Storm","Url":"/talents/1351-gathering-storm","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/971/64/64/icon.png","Tooltip":"<span>Gathering Storm</span><div>Permanently increases Hammerang's damage by <span>1</span> every time it damages an enemy Hero.</div>"},{"ID":727,"Tier":1,"Index":2,"Name":"Updraft","Url":"/talents/727-updraft","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/991/64/64/icon.png","Tooltip":"<span>Updraft</span><div>Increase the range of Barrel Roll by <span>30%</span>.</div>"},{"ID":984,"Tier":1,"Index":4,"Name":"Bribe","Url":"/talents/984-bribe","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/370/64/64/icon.png","Tooltip":"<span>Bribe</span><span class=\"t-hero-ability-cooldown\">Cooldown: <span>0.25</span> seconds</span><div>Enemy Minions or captured Mercenaries killed near your Hero grant you stacks of Bribe.  Use <span>20</span> stacks to bribe target Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum stacks available: <span>50</span>.Current number of Bribe stacks: <span>1</span></div>"}],[{"ID":911,"Tier":2,"Index":2,"Name":"Flow Rider","Url":"/talents/911-flow-rider","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/973/64/64/icon.png","Tooltip":"<span>Flow Rider</span><div>While Tailwind is active, your Basic Abilities recharge <span>100%</span> faster.</div>"},{"ID":914,"Tier":2,"Index":4,"Name":"Power Throw","Url":"/talents/914-power-throw","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/976/64/64/icon.png","Tooltip":"<span>Power Throw</span><div>Increase the range of Hammerang by <span>40%</span> and the slow duration by <span>25%</span>.</div>"},{"ID":917,"Tier":2,"Index":1,"Name":"Charged Up","Url":"/talents/917-charged-up","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/979/64/64/icon.png","Tooltip":"<span>Charged Up</span><div>Lightning Rod strikes the target <span>2</span> additional times. </div>"},{"ID":986,"Tier":2,"Index":3,"Name":"Vampiric Assault","Url":"/talents/986-vampiric-assault","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/372/64/64/icon.png","Tooltip":"<span>Vampiric Assault</span><div>Basic Attacks heal for <span>15%</span> of the damage dealt to the primary target.</div>"}],[{"ID":912,"Tier":3,"Index":4,"Name":"Free Roll","Url":"/talents/912-free-roll","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/974/64/64/icon.png","Tooltip":"<span>Free Roll</span><div>Barrel Roll costs no mana.</div>"},{"ID":915,"Tier":3,"Index":2,"Name":"Secret Weapon","Url":"/talents/915-secret-weapon","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/977/64/64/icon.png","Tooltip":"<span>Secret Weapon</span><div>Basic Attacks deal <span>80%</span> bonus damage while Hammerang is in flight.</div>"},{"ID":127,"Tier":3,"Index":3,"Name":"BOOMerang","Url":"/talents/127-boomerang","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/238/64/64/icon.png","Tooltip":"<span>BOOMerang</span><div>Reactivate Hammerang mid-flight to deal <span>266</span> <small>(<span>126</span> + <span>4%</span> per level)</small> damage around the Hammer.</div>"},{"ID":989,"Tier":3,"Index":5,"Name":"First Aid","Url":"/talents/989-first-aid","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/375/64/64/icon.png","Tooltip":"<span>First Aid</span><span class=\"t-hero-ability-cooldown\">Cooldown: <span>60</span> seconds</span><div>Activate to heal <span>11.07%</span> of your max Health over <span>6</span> seconds.</div>"},{"ID":555,"Tier":3,"Index":1,"Name":"Battle Momentum","Url":"/talents/555-battle-momentum","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/406/64/64/icon.png","Tooltip":"<span>Battle Momentum</span><div>Basic Attacks reduce Ability cooldowns by <span>0.5</span> seconds.</div>"}],[{"ID":910,"Tier":4,"Index":2,"Name":"Mighty Gust","Url":"/talents/910-mighty-gust","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/972/64/64/icon.png","Tooltip":"<span>Mighty Gust</span><span class=\"t-hero-ability-cooldown\">Cooldown: <span>40</span> seconds</span><div>Push enemies away, and slow their Movement Speed by <span>60%</span> decaying over <span>5</span> seconds.</div>"},{"ID":932,"Tier":4,"Index":1,"Name":"Hinterland Blast","Url":"/talents/932-hinterland-blast","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/239/64/64/icon.png","Tooltip":"<span>Hinterland Blast</span><span class=\"t-hero-ability-cooldown\">Cooldown: <span>90</span> seconds</span><div>After a short delay, deal <span>901</span> <small>(<span>428</span> + <span>4%</span> per level)</small> damage to enemies within a long line.</div>"}],[{"ID":919,"Tier":5,"Index":4,"Name":"Static Shield","Url":"/talents/919-static-shield","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/981/64/64/icon.png","Tooltip":"<span>Static Shield</span><div>Gain a Shield equal to <span>5%</span> of your maximum Health after every Lightning Rod strike. Lasts <span>4</span> seconds and stacks.</div>"},{"ID":920,"Tier":5,"Index":3,"Name":"Thunderstrikes","Url":"/talents/920-thunderstrikes","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/982/64/64/icon.png","Tooltip":"<span>Thunderstrikes</span><div>Lightning Rod deals <span>15%</span> more damage each subsequent strike.</div>"},{"ID":348,"Tier":5,"Index":2,"Name":"Crippling Hammer","Url":"/talents/348-crippling-hammer","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/985/64/64/icon.png","Tooltip":"<span>Crippling Hammer</span><div>Increases the Movement Speed Slow of Hammerang to <span>50%</span>.</div>"},{"ID":994,"Tier":5,"Index":1,"Name":"Giant Killer","Url":"/talents/994-giant-killer","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/380/64/64/icon.png","Tooltip":"<span>Giant Killer</span><div>Basic Attacks against enemy Heroes deal bonus damage equal to <span>1.5%</span> of the Hero's maximum Health.</div>"}],[{"ID":916,"Tier":6,"Index":2,"Name":"Hammer Time","Url":"/talents/916-hammer-time","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/978/64/64/icon.png","Tooltip":"<span>Hammer Time</span><div>Your first Basic Attack against a target slowed by Hammerang will stun them for <span>0.75</span> seconds.</div>"},{"ID":923,"Tier":6,"Index":1,"Name":"Aerie Gusts","Url":"/talents/923-aerie-gusts","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/988/64/64/icon.png","Tooltip":"<span>Aerie Gusts</span><div>Reduce activation time for Tailwind to <span>2</span> seconds, and increase the Movement Speed bonus to <span>30%</span>.</div>"},{"ID":130,"Tier":6,"Index":3,"Name":"Afterburner","Url":"/talents/130-afterburner","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/241/64/64/icon.png","Tooltip":"<span>Afterburner</span><div>After using Barrel Roll, gain <span>60%</span> Movement Speed that decreases over <span>3</span> seconds.</div>"},{"ID":988,"Tier":6,"Index":4,"Name":"Overdrive","Url":"/talents/988-overdrive","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/559/374/64/64/icon.png","Tooltip":"<span>Overdrive</span><span class=\"t-hero-ability-cooldown\">Cooldown: <span>25</span> seconds</span><div>Activate to increase Ability Power by <span>25%</span> and Mana costs by <span>40%</span> for <span>5</span> seconds.</div>"}],[{"ID":965,"Tier":7,"Index":3,"Name":"Nexus Frenzy","Url":"/talents/965-nexus-frenzy","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/918/64/64/icon.png","Tooltip":"<span>Nexus Frenzy</span><div>Increases Attack Speed by <span>20%</span> and Attack Range by <span>20%</span>.</div>"},{"ID":913,"Tier":7,"Index":4,"Name":"Epic Mount","Url":"/talents/913-epic-mount","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/975/64/64/icon.png","Tooltip":"<span>Epic Mount</span><div>Reduce the cooldown of Flight to <span>20</span> seconds, reduce the cast time before flying to <span>0.5</span> seconds, and increase the speed by <span>50%</span>.</div>"},{"ID":921,"Tier":7,"Index":2,"Name":"Wind Tunnel","Url":"/talents/921-wind-tunnel","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/983/64/64/icon.png","Tooltip":"<span>Wind Tunnel</span><div>Mighty Gust creates a wind tunnel for <span>4</span> seconds. Enemies caught in the tunnel will periodically be pushed back.</div>"},{"ID":922,"Tier":7,"Index":1,"Name":"Call of the Wildhammer","Url":"/talents/922-call-of-the-wildhammer","AvatarUrl":"http://media.heroesnexus.com/avatars/thumbnails/558/984/64/64/icon.png","Tooltip":"<span>Call of the Wildhammer</span><div>Hinterland Blast has double the range and deals <span>25%</span> more damage.</div>"}]]}}, 11);
+           });
+       </script>
+    
+                        
+                    </section>
+                </div>
+            </div>
+            
+            <!-- Above Footer -->
+            <section class="ad-container ad-container-footer">
+                <div class="ad-bin">
+                    
+        <div class="ad-placement ad-leaderboard-footer ">
+            <script>
+(function () {
+var num = window.innerWidth < 680 ? '00' : '04';
+document.write('<div id="cdm-zone-' + num + '"></div>');
+})();
+</script>
+        </div>
+
+    
+                </div>
+            </section>
+            <div id="footer-push"></div>
+        </div>
+        <footer id="footer">
+            
+
+<div class="footer-links">
+    
+        <a href="http://www.curse.com" target="_blank" class="curse">Curse</a>
+        <ul class="social">
+            <li><a href="http://www.facebook.com/CurseNetwork" target="_blank" class="fb">Facebook</a></li>
+            <li><a href="http://www.twitter.com/cursenetwork" target="_blank" class="tw">Twitter</a></li>
+            <li><a href="http://www.youtube.com/curseentertainment" target="_blank" class="yt">Youtube</a></li>
+            <li><a href="http://www.curse.com/newsletter" target="_blank" class="nl">Newsletter</a></li>
+        </ul>
+        <ul class="you">
+            
+                <li><a href="/login" id="login-link" class="sign-in">Sign In</a></li>
+                
+                    <li><a href="/register" class="register" id="register-link">Register</a></li>
+                
+            <li><a href="http://www.curseinc.com/careers" target="_blank" class="careers">Careers</a></li>
+            <li><a href="http://support.curse.com" target="_blank" class="help">Help</a></li>
+        </ul>
+        <ul class="more">
+            <li><a href="http://www.curseinc.com/company" target="_blank" class="about">About Curse</a></li>
+            <li><a href="http://www.curseinc.com/audience" target="_blank" class="advertise">Advertise</a></li>
+            <li><a href="http://www.curse.com/terms" target="_blank" class="tos">Terms of Service</a></li>
+            <li><a href="http://www.curse.com/privacy" target="_blank" class="privacy-policy">Privacy Policy</a></li>
+        </ul>
+        <span class="copyright">Copyright 2005-2015, Curse Inc.</span>
+    
+</div>
+<a id="responsive-footer-button" class="rs-link rs-link-to-responsive">Mobile View</a>
+        <div class="ad-placement ad-main-med-rect-footer ">
+            <div id='cdm-zone-03'></div> 
+        </div>
+
+    
+        </footer>
+        
+        <div class="ad-placement ad-skindiv sisu">
+            <script>
+(function () {
+var num = window.innerWidth < 1024 ? '00' : 'skin';
+document.write('<div id="cdm-zone-' + num + '"></div>');
+})();
+</script>
+        </div>
+
+    
+        <div class="ad-placement ad-enddiv ">
+            <div id='cdm-zone-end'></div>
+        </div>
+
+    
+    </div>
+
+    <!-- Layout End -->
+    <div id="analytics">
+        <!-- Google Analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(
+        ['_setAccount', 'UA-37896755-24'],
+        ['_setDomainName', 'heroesnexus.com'],
+        ['_addIgnoredRef', 'heroesnexus.com'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-1045810-22'],
+        ['b._setDomainName', 'heroesnexus.com'],
+        ['b._addIgnoredRef', 'heroesnexus.com'],
+        ['b._trackPageview']
+);
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- End Google Analytics -->
+
+<!-- Begin comScore -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "6035118" });
+(function() {
+   var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+   s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+   el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+   <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035118&amp;cv=2.0&amp;cj=1" />
+</noscript>
+<!-- End comScore -->
+
+<!-- Nielsen Online SiteCensus -->
+<script type="text/javascript">
+(function () {
+   var d = new Image(1, 1);
+   d.onerror = d.onload = function () {
+       d.onerror = d.onload = null;
+   };
+   d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+})();
+</script>
+<noscript>
+   <div><img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-603339h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" /></div>
+</noscript>
+<!-- End Nielsen Online SiteCensus -->
+<!-- Lotame -->
+<script src="http://tags.crwdcntrl.net/c/3613/cc.js?ns=_cc3613" id="LOTCC_3613"></script>
+<script>
+_cc3613.bcp();
+</script>
+<!-- End Lotame -->
+
+<!--Adblock Check--> 
+<script type="text/javascript" src="http://media.curse.com/Content/Ads/JS/BSAds3.js"></script> <script type="text/javascript"> jQuery(document).ready(checkAds()); function checkAds(){if (document.getElementById('adsense')!=undefined){document.write("<script>_gaq.push(['_trackEvent', 'Adblock', 'Unblocked', 'false',,true]);</sc" + "ript>");}else{document.write("<script>_gaq.push(['_trackEvent', 'Adblock', 'Blocked', 'true',,true]);</sc" + "ript>");}} </script>
+ <!--End Adblock Check-->
+
+<!--Crazy Egg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0011/8371.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!--End Crazy Egg-->
+    </div>
+	    
+    
+    
+
+<script type="text/javascript">
+    Device.initialize();
+    Cobalt.Burger.initializeEarly();
+
+    Cobalt.Constants.initialize({"StaticURL":"http://static-storm-new.cursecdn.com/1-0-5744-23387","SkinPath":"http://static-storm-new.cursecdn.com/1-0-5744-23387/Skins/Storm","MediaURL":"http://media.heroesnexus.com","AvatarURL":"http://media.heroesnexus.com/avatars","AttachmentURL":"http://media.heroesnexus.com/attachments","ActiveConfiguration":"production"});
+    
+    Cobalt.Constants.BuildVersion = "1-0-5744-23387";
+    Cobalt.Constants.IgnoredUserIDs = [];
+    Cobalt.Constants.ServerTimestamp = 1448827273309.96
+        Cobalt.Constants.FacebookAppID = "";
+    Cobalt.Constants.QuoteCssClasses = "blizzard,heroesnexuscom";
+    Cobalt.User.EnabledLanguageIDs = [1];
+    Cobalt.User.MaxQuoteDepth = 5; 
+    Cobalt.TinyMCE.extraPlugins = "";
+    Cobalt.TinyMCE.extraButtons = "";
+    Cobalt.TinyMCE.extraCustomPlugins = "";     
+
+    // NOTE: if you need to debug into tinymce, then change the following line to tinymce.js
+    Cobalt.TinyMCE.url = Cobalt.Constants.StaticURL + "/js/tinymce/tiny_mce/tinymce.min.js";
+    Cobalt.TinyMCE.customPluginUrl = Cobalt.Constants.StaticURL + "/js/tinymce/custom_plugins";
+    Cobalt.TinyMCE.skin_url = Cobalt.Constants.StaticURL + "/js/tinymce/custom_skin";
+    
+   
+    
+    Cobalt.Constants.SiteID = 2;
+    Cobalt.TinyMCE.fontColorEnabled = true;
+    Cobalt.TinyMCE.fontSizeEnabled = false;
+    Cobalt.TinyMCE.fontFamilyEnabled = true;
+    Cobalt.TinyMCE.textAlignmentEnabled = true;
+    Cobalt.TinyMCE.smiliesEnabled = false;
+    Cobalt.TinyMCE.forceSimpleBBCodeEditor = false;  
+    Cobalt.Constants.NestedQuotePreference  = 1;
+    
+    $.ajaxSetup({
+        data: {},
+        timeout: 30000
+    });
+    
+    
+
+    //bbcode entries
+    
+    Cobalt.Markup.customBBcodeButtons = [];
+
+    //censorship entries
+    
+    Cobalt.UI.CensoredWords = [];
+    
+    
+    
+    Cobalt.CMS.CobaltCss = ["http://static-storm-new.cursecdn.com/1-0-5744-23387/Skins/Global-TinyMCE/css/compiled.css"];    
+    Cobalt.CMS.ProjectCss = ["http://static-storm-new.cursecdn.com/1-0-5744-23387/Skins/Storm/css/compiled.css"];    
+
+</script>
+
+
+<script type="text/javascript">
+
+    Cobalt.runOnLoad(function () {
+        Cobalt.initialize([{dependency:Cobalt.Tabs, priority:99, name:'Cobalt.Tabs'},{dependency:Cobalt.NiceDates, priority:99, name:'Cobalt.NiceDates'},{dependency:Cobalt.Core, priority:99, name:'Cobalt.Core'},{dependency:Cobalt.Forms, priority:99, name:'Cobalt.Forms'},{dependency:Cobalt.Forum, priority:99, name:'Cobalt.Forum'},{dependency:Cobalt.UI, priority:99, name:'Cobalt.UI'},{dependency:Cobalt.Auth, priority:99, name:'Cobalt.Auth'},{dependency:Cobalt.Notifications, priority:99, name:'Cobalt.Notifications'},{dependency:Cobalt.Feedback, priority:99, name:'Cobalt.Feedback'},{dependency:Cobalt.WarningNotification, priority:99, name:'Cobalt.WarningNotification'},{dependency:Cobalt.TinyMCE, priority:99, name:'Cobalt.TinyMCE'},{dependency:Cobalt.Footer, priority:99, name:'Cobalt.Footer'},{dependency:Cobalt.Tidbit, priority:99, name:'Cobalt.Tidbit'}]);
+    });
+
+</script>
+</body>
+</html>
