@@ -43,7 +43,7 @@ div.DefaultHeroFrame{
 
 
 div.GreyedHeroFrame{
-    border: 50px solid #ccc;
+    border: 20px solid #ccc;
 
 }
 div.BlackHeroFrame{
@@ -55,26 +55,27 @@ div.BlackHeroFrame{
 
 </style>
 <script>
-	var Block = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","Butcher","Thrall","Uther","Zeratul"];
+	var Block = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
 	var BlockVariants = ["LtMorales","Johanna"];
 	function highlightHeroes( heroArray ){
 	
-		document.getElementById( "wtfTEST" ).innerHTML = Block;
-		document.getElementById( "Abathur" ).className = "GreyedHeroFrame";
-		//document.getElementById( "Abathur" ).className += "BlackHeroFrame";
+		heroArray = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
 	
-		heroArrayLength = heroArray.length;
+		//document.getElementById( "wtfTEST" ).innerHTML = heroArray;
+		//document.getElementById( heroArray[0] ).className = "GreyedHeroFrame";
+		//document.getElementById( "Abathur" ).className += "BlackHeroFrame";
+		//document.getElementById( heroArray[heroArrayLength-1] ).className =  "GreyedHeroFrame";
 		
-		var testString = "START " +""
-		
-		for(var i = heroArray.length; i>0;i-- ){
-			document.getElementById( heroArray[heroArrayLength] ).innerHTML = heroArray[heroArrayLength] ;
+		var i;
+		for(i = heroArray.length-1; i >= 0;i-- ){
+			document.getElementById( heroArray[i] ).className = "GreyedHeroFrame"
 		}
 		return;
 	}
-	
 </script>
+
 </head>
+
 <body>
 <button onclick=highlightHeroes(Block)>"Highlight Block List"</button>
 <ul id="herolist">
@@ -99,57 +100,179 @@ div.BlackHeroFrame{
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
+		<div class="DefaultHeroFrame" id="Brightwing">
+			<img src="HotS_Images\Hero_Icons\Brightwing.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Diablo">
+			<img src="HotS_Images\Hero_Icons\Diablo.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="ETC">
+			<img src="HotS_Images\Hero_Icons\ETC.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Falstad">
+			<img src="HotS_Images\Hero_Icons\Falstad.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Gazlowe">
+			<img src="HotS_Images\Hero_Icons\Gazlowe.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Illidan">
+			<img src="HotS_Images\Hero_Icons\Illidan.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Jaina">
+			<img src="HotS_Images\Hero_Icons\Jaina.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Johanna">
+			<img src="HotS_Images\Hero_Icons\Johanna.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Kaelthas">
+			<img src="HotS_Images\Hero_Icons\Kaelthas.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Kerrigan">
+			<img src="HotS_Images\Hero_Icons\Kerrigan.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Kharazim">
+			<img src="HotS_Images\Hero_Icons\Kharazim.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Leoric">
+			<img src="HotS_Images\Hero_Icons\Leoric.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Lili">
+			<img src="HotS_Images\Hero_Icons\Lili.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Malfurion">
 			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
+		<div class="DefaultHeroFrame" id="Muradin">
+			<img src="HotS_Images\Hero_Icons\Muradin.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Murky">
 			<img src="HotS_Images\Hero_Icons\Abathur.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Nazeebo">
+			<img src="HotS_Images\Hero_Icons\Nazeebo.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Nova">
+			<img src="HotS_Images\Hero_Icons\Nova.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Raynor">
+			<img src="HotS_Images\Hero_Icons\Raynor.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Rehgar">
+			<img src="HotS_Images\Hero_Icons\Rehgar.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Sergeant Hammer">
+			<img src="HotS_Images\Hero_Icons\Sergeant Hammer.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Sonya">
+			<img src="HotS_Images\Hero_Icons\Sonya.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Stitches">
+			<img src="HotS_Images\Hero_Icons\Stitches.png">
 		</div>
 	</li>
 	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		<div class="DefaultHeroFrame" id="Sylvanas">
+			<img src="HotS_Images\Hero_Icons\Sylvanas.png">
 		</div>
 	</li>
 	<li>
-		<img src="HotS_Images\Hero_Icons\Anubarak.png">
+		<div class="DefaultHeroFrame" id="Tassadar">
+			<img src="HotS_Images\Hero_Icons\Tassadar.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="TLV">
+			<img src="HotS_Images\Hero_Icons\TLV.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="The Butcher">
+			<img src="HotS_Images\Hero_Icons\The Butcher.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Thrall">
+			<img src="HotS_Images\Hero_Icons\Thrall.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Tychus">
+			<img src="HotS_Images\Hero_Icons\Tychus.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Tyrael">
+			<img src="HotS_Images\Hero_Icons\Tyrael.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Tyrande">
+			<img src="HotS_Images\Hero_Icons\Tyrande.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Uther">
+			<img src="HotS_Images\Hero_Icons\Uther.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Valla">
+			<img src="HotS_Images\Hero_Icons\Valla.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Zagara">
+			<img src="HotS_Images\Hero_Icons\Zagara.png">
+		</div>
+	</li>
+	<li>
+		<div class="DefaultHeroFrame" id="Zeratul">
+			<img src="HotS_Images\Hero_Icons\Zeratul.png">
+		</div>
 	</li>
 </ul>
 <header>
