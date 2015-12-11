@@ -50,7 +50,6 @@ div.heroFrame img{
     height: auto;
     border: 2px solid Blue;
 	display:inline;
-
 }
 
 /*
@@ -91,19 +90,29 @@ ul#imageList li{
 	var BlockVariants = ["LtMorales","Johanna"];
 	function highlightHeroes( heroArray ){
 	
-		heroArray = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
+		//heroArray = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
 	
-		//document.getElementById( "wtfTEST" ).innerHTML = heroArray;
+		document.getElementById( "wtfTEST" ).innerHTML = heroArray;
 		//document.getElementById( heroArray[0] ).className = "GreyedHeroFrame";
 		//document.getElementById( "Abathur" ).className += "BlackHeroFrame";
 		//document.getElementById( heroArray[heroArrayLength-1] ).className =  "GreyedHeroFrame";
 		
+		var testString = "";
 		var j;
 		var i;
+		
 		for(j=(heroArray.length-1),i=0; j >= i; i++ ){
-			document.getElementById( heroArray[i] ).style.borderWidth = "4px";
-			document.getElementById( heroArray[i] ).img.borderColor = "#FF0000";
+			//testString = testString+i;
+			//testString.concat(i);
+			var innerImage = document.getElementById( heroArray[i] );
+			innerImage.style.padding = "3px";
+			innerImage = innerImage.getElementsByTagName('img');
+			innerImage[0].style.borderColor = "#FF0000";
+			innerImage[0].style.borderWidth = "4px";
 		}
+		//document.getElementById( "wtfTEST" ).innerHTML = testString;
+		
+		
 		return;
 	}
 </script>
