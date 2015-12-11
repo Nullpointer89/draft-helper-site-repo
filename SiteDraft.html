@@ -37,10 +37,10 @@ heroFrame:onclick {
 
 
 div.heroFrame{
-    padding: 5px;
     float: left;
     opacity: 1.0;
     filter: alpha(opacity=50); /* For IE8 and earlier */
+    border: 5px solid Green;
 	display:inline;
 
 }
@@ -52,13 +52,13 @@ div.heroFrame img{
 	display:inline;
 }
 
-/*
-div.greyedHeroFrame{
+
+div.darkenedHeroFrame{
     opacity: 0.4;
     filter: alpha(opacity=40); /* For IE8 and earlier */
-}*/
+}
 
-div.iconFrame{
+div.talentFrame{
     padding: 5px;
     float: left;
     opacity: 1.0;
@@ -67,17 +67,19 @@ div.iconFrame{
 
 }
 
-div.iconFrame img{
+div.talentFrame img{
     width: 64px;
     height: auto;
+    opacity: 1.0;
     border: 2px solid #FF8C00;
 
 }
 
 /*
-ul.iconlist img: { width:32px; }
+ul.talentlist img: { width:32px; }
 ul.herolist img: { width:32px; }
 */
+
 
 ul#imageList li{
 	list-style-type:none;
@@ -86,35 +88,130 @@ ul#imageList li{
 
 </style>
 <script>
-	var Block = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
-	var BlockVariants = ["LtMorales","Johanna"];
-	function highlightHeroes( heroArray ){
+	var blockList = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
+	var blockVariants = ["Lt Morales","Johanna"];
+	var blockToggle = false;
+
+	var boltList = ["Arthas","Diablo","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
+	var boltVariants = ["Lt Morales","Johanna"];
+	var boltToggle = false;
+
+	var bloodForBloodList = ["Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
+	var bloodForBloodVariants = ["Lt Morales","Johanna"];
+	var bloodForBloodToggle = false;
+
+	var shrinkRayList = ["Arthas","Kerrigan","Leoric","Murky","Sonya","The Butcher"];
+	var shrinkRayVariants = ["Lt Morales","Johanna"];
+	var shrinkRayToggle = false;
 	
-		//heroArray = ["Arthas","Diablo","ETC","Kerrigan","Leoric","Muradin","Murky","Sonya","The Butcher","Thrall","Uther","Zeratul"];
+	function toggleBlock(){
+		if(blockToggle){
+			document.getElementById("block").style.opacity = "0.4";
+		blockToggle = false;
+		}else{
+		blockToggle = true;
+			document.getElementById("block").style.opacity = "1.0";
+		}
+		updateHighlights();
+		return;
+	}
+	
+	function toggleBolt(){
+		if(boltToggle){
+			document.getElementById("bolt-of-the-storm-talent").style.opacity = "0.4";
+		boltToggle = false;
+		}else{
+		boltToggle = true;
+			document.getElementById("bolt-of-the-storm-talent").style.opacity = "1.0";
+		}
+		updateHighlights();
+	}
+	
+	function toggleBloodForBlood(){
+		if(bloodForBloodToggle){
+			document.getElementById("blood-for-blood-talent").style.opacity = "0.4";
+		bloodForBloodToggle = false;
+		}else{
+		bloodForBloodToggle = true;
+			document.getElementById("blood-for-blood-talent").style.opacity = "1.0";
+		}
+		updateHighlights();
+	}
+	
+	function toggleShrinkRay(){
+		if(shrinkRayToggle){
+			document.getElementById("shrink-ray").style.opacity = "0.4";
+			shrinkRayToggle = false;
+		}else{
+			shrinkRayToggle = true;
+			document.getElementById("shrink-ray").style.opacity = "1.0";
+		}
+		updateHighlights();
+	}
+	
+	function updateHighlights(){
+		var siteIsUnchanged = true;
+		setAllHeroOpacity( "0.4" );
+		
+		if( blockToggle ){
+			highlightHeroes( blockList );
+			siteIsUnchanged = false;
+		}
+		
+		if( boltToggle ){
+			highlightHeroes( boltList );
+			siteIsUnchanged = false;
+		}
+		
+		if( shrinkRayToggle ){
+			highlightHeroes( shrinkRayList );
+			siteIsUnchanged = false;
+		}
+		
+		if( bloodForBloodToggle ){
+			highlightHeroes( bloodForBloodList );
+			siteIsUnchanged = false;
+		}
+		
+		if( siteIsUnchanged ){
+			setAllHeroOpacity( "1.0" );
+		}
+	}
+	
+	function highlightHeroes( heroArray ){
 	
 		document.getElementById( "wtfTEST" ).innerHTML = heroArray;
 		//document.getElementById( heroArray[0] ).className = "GreyedHeroFrame";
-		//document.getElementById( "Abathur" ).className += "BlackHeroFrame";
-		//document.getElementById( heroArray[heroArrayLength-1] ).className =  "GreyedHeroFrame";
-		
-		var testString = "";
 		var j;
 		var i;
 		
 		for(j=(heroArray.length-1),i=0; j >= i; i++ ){
-			//testString = testString+i;
-			//testString.concat(i);
-			var innerImage = document.getElementById( heroArray[i] );
-			innerImage.style.padding = "3px";
-			innerImage = innerImage.getElementsByTagName('img');
-			innerImage[0].style.borderColor = "#FF0000";
-			innerImage[0].style.borderWidth = "4px";
+			highlightHero( document.getElementById( heroArray[i] ) );
 		}
-		//document.getElementById( "wtfTEST" ).innerHTML = testString;
-		
 		
 		return;
 	}
+	
+	function highlightHero( heroElement ){
+		//heroElement.style.borderWidth = "3px";
+		heroElement.style.opacity = "1.0";
+		/*
+		heroElement = heroElement.getElementsByTagName('img');
+		heroElement[0].style.borderColor = "#FF0000";
+		heroElement[0].style.borderWidth = "4px";
+		*/
+	}
+	
+	function setAllHeroOpacity( newOpacity ){
+		var heroArray = document.getElementsByClassName( "heroFrame" );
+		var j;
+		var i;
+		
+		for(j=(heroArray.length-1),i=0; j >= i; i++ ){
+			heroArray[i].style.opacity = newOpacity;
+		}
+	}
+	
 </script>
 
 </head>
@@ -128,11 +225,23 @@ ul#imageList li{
 
 <ul id="imageList">
 	<li>
-		<div class="iconFrame" id="block">
+		<div class="talentFrame" id="block" onclick=toggleBlock()>
 			<img src="HotS_Images\Ability_Icons\block.png">
 		</div>
-		<div class="iconFrame" id="shrink-ray">
+	</li>
+	<li>
+		<div class="talentFrame" id="shrink-ray" onclick=toggleShrinkRay()>
 			<img src="HotS_Images\Ability_Icons\shrink-ray.png">
+		</div>
+	</li>
+	<li>
+		<div class="talentFrame" id="blood-for-blood-talent" onclick=toggleBloodForBlood()>
+			<img src="HotS_Images\Ability_Icons\blood-for-blood-talent.png">
+		</div>
+	</li>
+	<li>
+		<div class="talentFrame" id="bolt-of-the-storm-talent" onclick=toggleBolt()>
+			<img src="HotS_Images\Ability_Icons\bolt-of-the-storm-talent.png">
 		</div>
 	</li>
 </ul>
@@ -140,7 +249,9 @@ London<br>
 Paris<br>
 Tokyo<br>
 </nav>
-<button onclick=highlightHeroes(Block)>"Highlight Block List"</button>
+<button onclick=toggleBlock()>"Highlight Block List"</button>
+<!-- <button onclick=setAllHeroOpacity("0.4")>"Darken all heroes"</button> -->
+<button onclick=updateHighlights()>"updateHighlights"</button>
 <ul id="imageList">
 	<li>
 		<div class="heroFrame" id="Abathur">
@@ -150,6 +261,11 @@ Tokyo<br>
 	<li>
 		<div class="heroFrame" id="Anubarak">
 			<img src="HotS_Images\Hero_Icons\Anubarak.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Artanis">
+			<img src="HotS_Images\Hero_Icons\Artanis.png">
 		</div>
 	</li>
 	<li>
@@ -168,6 +284,16 @@ Tokyo<br>
 		</div>
 	</li>
 	<li>
+		<div class="heroFrame" id="Chen">
+			<img src="HotS_Images\Hero_Icons\Chen.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Cho">
+			<img src="HotS_Images\Hero_Icons\Cho.png">
+		</div>
+	</li>
+	<li>
 		<div class="heroFrame" id="Diablo">
 			<img src="HotS_Images\Hero_Icons\Diablo.png">
 		</div>
@@ -180,6 +306,11 @@ Tokyo<br>
 	<li>
 		<div class="heroFrame" id="Falstad">
 			<img src="HotS_Images\Hero_Icons\Falstad.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Gall">
+			<img src="HotS_Images\Hero_Icons\Gall.png">
 		</div>
 	</li>
 	<li>
@@ -228,6 +359,11 @@ Tokyo<br>
 		</div>
 	</li>
 	<li>
+		<div class="heroFrame" id="Lt Morales">
+			<img src="HotS_Images\Hero_Icons\Lt Morales.png">
+		</div>
+	</li>
+	<li>
 		<div class="heroFrame" id="Malfurion">
 			<img src="HotS_Images\Hero_Icons\Malfurion.png">
 		</div>
@@ -260,6 +396,11 @@ Tokyo<br>
 	<li>
 		<div class="heroFrame" id="Rehgar">
 			<img src="HotS_Images\Hero_Icons\Rehgar.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Rexxar">
+			<img src="HotS_Images\Hero_Icons\Rexxar.png">
 		</div>
 	</li>
 	<li>
