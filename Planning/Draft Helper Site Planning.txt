@@ -6,6 +6,16 @@ My site design
 	
 
 /*
+Global into for the number of restrictions
+	Check before and after a button is clicked if the # of restrictions is incremented or decremented
+		if incremented DON'T run darken
+		if decremented RUN DARKEN before updating all the highlights
+
+can highlight all relative id's in linear time if both arrays are alphabetical
+
+
+
+
 
 CSS classes
 	default

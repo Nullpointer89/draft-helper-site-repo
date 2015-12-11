@@ -14,13 +14,14 @@ nav {
     height:300px;
     width:100px;
     float:left;
-    padding:5px;	      
+    padding:5px;	     
 }
 section {
     width:350px;
     float:left;
     padding:10px;	 	 
 }
+
 footer {
     background-color:black;
     color:white;
@@ -29,29 +30,60 @@ footer {
     padding:5px;	 	 
 }
 
-ul#herolist li{
+
+heroFrame:onclick {
+    border: 2px;
+}
+
+
+div.heroFrame{
+    padding: 5px;
+    float: left;
+    opacity: 1.0;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+	display:inline;
+
+}
+
+div.heroFrame img{
+    width: 64px;
+    height: auto;
+    border: 2px solid Blue;
+	display:inline;
+
+}
+
+/*
+div.greyedHeroFrame{
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}*/
+
+div.iconFrame{
+    padding: 5px;
+    float: left;
+    opacity: 1.0;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+	display:inline;
+
+}
+
+div.iconFrame img{
+    width: 64px;
+    height: auto;
+    border: 2px solid #FF8C00;
+
+}
+
+/*
+ul.iconlist img: { width:32px; }
+ul.herolist img: { width:32px; }
+*/
+
+ul#imageList li{
 	list-style-type:none;
 	display:inline;
 }
-
-div.DefaultHeroFrame{
-	display:inline;
-    opacity: 1.0;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-
-}
-
-
-div.GreyedHeroFrame{
-    border: 20px solid #ccc;
-
-}
-div.BlackHeroFrame{
-    border: 20px solid #aaaa;
-
-}
-
-
 
 </style>
 <script>
@@ -66,9 +98,11 @@ div.BlackHeroFrame{
 		//document.getElementById( "Abathur" ).className += "BlackHeroFrame";
 		//document.getElementById( heroArray[heroArrayLength-1] ).className =  "GreyedHeroFrame";
 		
+		var j;
 		var i;
-		for(i = heroArray.length-1; i >= 0;i-- ){
-			document.getElementById( heroArray[i] ).className = "GreyedHeroFrame"
+		for(j=(heroArray.length-1),i=0; j >= i; i++ ){
+			document.getElementById( heroArray[i] ).style.borderWidth = "4px";
+			document.getElementById( heroArray[i] ).img.borderColor = "#FF0000";
 		}
 		return;
 	}
@@ -77,213 +111,224 @@ div.BlackHeroFrame{
 </head>
 
 <body>
-<button onclick=highlightHeroes(Block)>"Highlight Block List"</button>
-<ul id="herolist">
-	<li>
-		<div class="DefaultHeroFrame" id="Abathur">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Anubarak">
-			<img src="HotS_Images\Hero_Icons\Anubarak.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Arthas">
-			<img src="HotS_Images\Hero_Icons\Arthas.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Azmodan">
-			<img src="HotS_Images\Hero_Icons\Azmodan.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Brightwing">
-			<img src="HotS_Images\Hero_Icons\Brightwing.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Diablo">
-			<img src="HotS_Images\Hero_Icons\Diablo.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="ETC">
-			<img src="HotS_Images\Hero_Icons\ETC.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Falstad">
-			<img src="HotS_Images\Hero_Icons\Falstad.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Gazlowe">
-			<img src="HotS_Images\Hero_Icons\Gazlowe.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Illidan">
-			<img src="HotS_Images\Hero_Icons\Illidan.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Jaina">
-			<img src="HotS_Images\Hero_Icons\Jaina.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Johanna">
-			<img src="HotS_Images\Hero_Icons\Johanna.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Kaelthas">
-			<img src="HotS_Images\Hero_Icons\Kaelthas.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Kerrigan">
-			<img src="HotS_Images\Hero_Icons\Kerrigan.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Kharazim">
-			<img src="HotS_Images\Hero_Icons\Kharazim.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Leoric">
-			<img src="HotS_Images\Hero_Icons\Leoric.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Lili">
-			<img src="HotS_Images\Hero_Icons\Lili.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Malfurion">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Muradin">
-			<img src="HotS_Images\Hero_Icons\Muradin.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Murky">
-			<img src="HotS_Images\Hero_Icons\Abathur.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Nazeebo">
-			<img src="HotS_Images\Hero_Icons\Nazeebo.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Nova">
-			<img src="HotS_Images\Hero_Icons\Nova.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Raynor">
-			<img src="HotS_Images\Hero_Icons\Raynor.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Rehgar">
-			<img src="HotS_Images\Hero_Icons\Rehgar.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Sergeant Hammer">
-			<img src="HotS_Images\Hero_Icons\Sergeant Hammer.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Sonya">
-			<img src="HotS_Images\Hero_Icons\Sonya.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Stitches">
-			<img src="HotS_Images\Hero_Icons\Stitches.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Sylvanas">
-			<img src="HotS_Images\Hero_Icons\Sylvanas.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Tassadar">
-			<img src="HotS_Images\Hero_Icons\Tassadar.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="TLV">
-			<img src="HotS_Images\Hero_Icons\TLV.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="The Butcher">
-			<img src="HotS_Images\Hero_Icons\The Butcher.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Thrall">
-			<img src="HotS_Images\Hero_Icons\Thrall.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Tychus">
-			<img src="HotS_Images\Hero_Icons\Tychus.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Tyrael">
-			<img src="HotS_Images\Hero_Icons\Tyrael.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Tyrande">
-			<img src="HotS_Images\Hero_Icons\Tyrande.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Uther">
-			<img src="HotS_Images\Hero_Icons\Uther.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Valla">
-			<img src="HotS_Images\Hero_Icons\Valla.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Zagara">
-			<img src="HotS_Images\Hero_Icons\Zagara.png">
-		</div>
-	</li>
-	<li>
-		<div class="DefaultHeroFrame" id="Zeratul">
-			<img src="HotS_Images\Hero_Icons\Zeratul.png">
-		</div>
-	</li>
-</ul>
 <header>
 <h1>City Gallery</h1>
 </header>
 
 <nav>
+
+<ul id="imageList">
+	<li>
+		<div class="iconFrame" id="block">
+			<img src="HotS_Images\Ability_Icons\block.png">
+		</div>
+		<div class="iconFrame" id="shrink-ray">
+			<img src="HotS_Images\Ability_Icons\shrink-ray.png">
+		</div>
+	</li>
+</ul>
 London<br>
 Paris<br>
 Tokyo<br>
 </nav>
+<button onclick=highlightHeroes(Block)>"Highlight Block List"</button>
+<ul id="imageList">
+	<li>
+		<div class="heroFrame" id="Abathur">
+			<img src="HotS_Images\Hero_Icons\Abathur.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Anubarak">
+			<img src="HotS_Images\Hero_Icons\Anubarak.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Arthas">
+			<img src="HotS_Images\Hero_Icons\Arthas.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Azmodan">
+			<img src="HotS_Images\Hero_Icons\Azmodan.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Brightwing">
+			<img src="HotS_Images\Hero_Icons\Brightwing.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Diablo">
+			<img src="HotS_Images\Hero_Icons\Diablo.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="ETC">
+			<img src="HotS_Images\Hero_Icons\ETC.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Falstad">
+			<img src="HotS_Images\Hero_Icons\Falstad.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Gazlowe">
+			<img src="HotS_Images\Hero_Icons\Gazlowe.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Illidan">
+			<img src="HotS_Images\Hero_Icons\Illidan.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Jaina">
+			<img src="HotS_Images\Hero_Icons\Jaina.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Johanna">
+			<img src="HotS_Images\Hero_Icons\Johanna.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Kaelthas">
+			<img src="HotS_Images\Hero_Icons\Kaelthas.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Kerrigan">
+			<img src="HotS_Images\Hero_Icons\Kerrigan.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Kharazim">
+			<img src="HotS_Images\Hero_Icons\Kharazim.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Leoric">
+			<img src="HotS_Images\Hero_Icons\Leoric.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Lili">
+			<img src="HotS_Images\Hero_Icons\Lili.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Malfurion">
+			<img src="HotS_Images\Hero_Icons\Malfurion.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Muradin">
+			<img src="HotS_Images\Hero_Icons\Muradin.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Murky">
+			<img src="HotS_Images\Hero_Icons\Murky.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Nazeebo">
+			<img src="HotS_Images\Hero_Icons\Nazeebo.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Nova">
+			<img src="HotS_Images\Hero_Icons\Nova.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Raynor">
+			<img src="HotS_Images\Hero_Icons\Raynor.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Rehgar">
+			<img src="HotS_Images\Hero_Icons\Rehgar.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Sergeant Hammer">
+			<img src="HotS_Images\Hero_Icons\Sergeant Hammer.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Sonya">
+			<img src="HotS_Images\Hero_Icons\Sonya.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Stitches">
+			<img src="HotS_Images\Hero_Icons\Stitches.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Sylvanas">
+			<img src="HotS_Images\Hero_Icons\Sylvanas.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Tassadar">
+			<img src="HotS_Images\Hero_Icons\Tassadar.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="TLV">
+			<img src="HotS_Images\Hero_Icons\TLV.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="The Butcher">
+			<img src="HotS_Images\Hero_Icons\The Butcher.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Thrall">
+			<img src="HotS_Images\Hero_Icons\Thrall.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Tychus">
+			<img src="HotS_Images\Hero_Icons\Tychus.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Tyrael">
+			<img src="HotS_Images\Hero_Icons\Tyrael.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Tyrande">
+			<img src="HotS_Images\Hero_Icons\Tyrande.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Uther">
+			<img src="HotS_Images\Hero_Icons\Uther.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Valla">
+			<img src="HotS_Images\Hero_Icons\Valla.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Zagara">
+			<img src="HotS_Images\Hero_Icons\Zagara.png">
+		</div>
+	</li>
+	<li>
+		<div class="heroFrame" id="Zeratul">
+			<img src="HotS_Images\Hero_Icons\Zeratul.png">
+		</div>
+	</li>
+</ul>
 
 <section>
 <h1>London</h1>
