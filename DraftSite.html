@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="Draft Site Style Sheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- <script src="Draft Site Scripts.js"></script> -->
+	<script src="Draft Site Scripts.js"></script>
+	
+	<script>
+		/**/	//compile a list of every Hero
+		var heroList = [];
+		var genericTalentList = [];
+		//var heroList = $(".heroFrame");
+		var heroList = $(".heroFrame").attr("id");
+		/*
+		$(document).ready(function(){
+			$(".heroFrame").each(function(i, hero){
+				heroList.push( hero.attr("id") );
+			});
+		});
+		*/
+		
+	</script>
+	
+</head>
+
+<body>
+	<div id="header">
+		<h1>HotS Generic Talent Highlighter</h1>
+	</div>
+
+	<div id="nav">
+		<div class="talentLevelFrame">
+			<h4>Level 1</h1>
+			<ul class="imageList">
+				<li>
+					<div class="talentFrame" id="block">
+						<img src="HotS_Images\Ability_Icons\block.png">
+					</div>
+				</li>
+				<li>
+					<div class="talentFrame" id="regeneration-master">
+						<img src="HotS_Images\Ability_Icons\regeneration-master.png">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="talentLevelFrame">
+			<h4>Level 4</h1>
+			<ul class="imageList">
+			</ul>
+		</div>
+		<div class="talentLevelFrame">
+			<h4>Level 7</h1>
+			<ul class="imageList">
+			</ul>
+		</div>
+		<div class="talentLevelFrame">
+			<h4>Level 13</h1>
+			<ul class="imageList">
+				<li>
+					<div class="talentFrame" id="shrink-ray">
+						<img src="HotS_Images\Ability_Icons\shrink-ray.png">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="talentLevelFrame">
+			<h4>Level 16</h1>
+			<ul class="imageList">
+				<li>
+					<div class="talentFrame" id="blood-for-blood-talent">
+						<img src="HotS_Images\Ability_Icons\blood-for-blood-talent.png">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="talentLevelFrame">
+			<h4>Level 20</h1>
+			<ul class="imageList">
+				<li>
+					<div class="talentFrame" id="bolt-of-the-storm-talent">
+						<img src="HotS_Images\Ability_Icons\bolt-of-the-storm-talent.png">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="section">
+		<ul class="imageList">
+			<li>
+				<div class="heroFrame " id="Abathur">
+					<img src="HotS_Images\Hero_Icons\Abathur.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Anubarak">
+					<img src="HotS_Images\Hero_Icons\Anubarak.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Artanis">
+					<img src="HotS_Images\Hero_Icons\Artanis.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Arthas">
+					<img src="HotS_Images\Hero_Icons\Arthas.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Azmodan">
+					<img src="HotS_Images\Hero_Icons\Azmodan.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Brightwing">
+					<img src="HotS_Images\Hero_Icons\Brightwing.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Chen">
+					<img src="HotS_Images\Hero_Icons\Chen.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Cho">
+					<img src="HotS_Images\Hero_Icons\Cho.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Diablo">
+					<img src="HotS_Images\Hero_Icons\Diablo.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="ETC">
+					<img src="HotS_Images\Hero_Icons\ETC.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Falstad">
+					<img src="HotS_Images\Hero_Icons\Falstad.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Gall">
+					<img src="HotS_Images\Hero_Icons\Gall.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Gazlowe">
+					<img src="HotS_Images\Hero_Icons\Gazlowe.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Illidan">
+					<img src="HotS_Images\Hero_Icons\Illidan.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Jaina">
+					<img src="HotS_Images\Hero_Icons\Jaina.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Johanna">
+					<img src="HotS_Images\Hero_Icons\Johanna.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Kaelthas">
+					<img src="HotS_Images\Hero_Icons\Kaelthas.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Kerrigan">
+					<img src="HotS_Images\Hero_Icons\Kerrigan.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Kharazim">
+					<img src="HotS_Images\Hero_Icons\Kharazim.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Leoric">
+					<img src="HotS_Images\Hero_Icons\Leoric.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Lili">
+					<img src="HotS_Images\Hero_Icons\Lili.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Lt_Morales">
+					<img src="HotS_Images\Hero_Icons\Lt_Morales.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Malfurion">
+					<img src="HotS_Images\Hero_Icons\Malfurion.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Muradin">
+					<img src="HotS_Images\Hero_Icons\Muradin.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Murky">
+					<img src="HotS_Images\Hero_Icons\Murky.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Nazeebo">
+					<img src="HotS_Images\Hero_Icons\Nazeebo.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Nova">
+					<img src="HotS_Images\Hero_Icons\Nova.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Raynor">
+					<img src="HotS_Images\Hero_Icons\Raynor.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Rehgar">
+					<img src="HotS_Images\Hero_Icons\Rehgar.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Rexxar">
+					<img src="HotS_Images\Hero_Icons\Rexxar.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Sergeant_Hammer">
+					<img src="HotS_Images\Hero_Icons\Sergeant_Hammer.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Sonya">
+					<img src="HotS_Images\Hero_Icons\Sonya.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Stitches">
+					<img src="HotS_Images\Hero_Icons\Stitches.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Sylvanas">
+					<img src="HotS_Images\Hero_Icons\Sylvanas.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Tassadar">
+					<img src="HotS_Images\Hero_Icons\Tassadar.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="TLV">
+					<img src="HotS_Images\Hero_Icons\TLV.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="The_Butcher">
+					<img src="HotS_Images\Hero_Icons\The_Butcher.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Thrall">
+					<img src="HotS_Images\Hero_Icons\Thrall.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Tychus">
+					<img src="HotS_Images\Hero_Icons\Tychus.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Tyrael">
+					<img src="HotS_Images\Hero_Icons\Tyrael.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Tyrande">
+					<img src="HotS_Images\Hero_Icons\Tyrande.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Uther">
+					<img src="HotS_Images\Hero_Icons\Uther.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Valla">
+					<img src="HotS_Images\Hero_Icons\Valla.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Zagara">
+					<img src="HotS_Images\Hero_Icons\Zagara.png">
+				</div>
+			</li>
+			<li>
+				<div class="heroFrame" id="Zeratul">
+					<img src="HotS_Images\Hero_Icons\Zeratul.png">
+				</div>
+			</li>
+		</ul>
+		<script>
+			$(".talentFrame").each( function( index, affectedHero){
+				this.style.opacity = "0.4";
+			});
+			//document.getElementById("bolt-of-the-storm-talent").style.opacity = "0.4";
+			//document.getElementById("blood-for-blood-talent").style.opacity = "0.4";
+			//document.getElementById("shrink-ray").style.opacity = "0.4";
+			//document.getElementById("block").style.opacity = "0.4";
+			//var heroList = $(".heroFrame");
+			/*
+			var i = heroList.length;
+			var heroListText = [];
+			i -= 1;
+			for(i=(heroList.length-1); i >= 0;i--){
+				heroListText.push( heroList[i].id );
+			}*/
+			
+			
+			$(document).ready(function() {
+				initializeTalentLists();
+				initializeHeroList();
+				$(".talentFrame").click(function() {
+					
+					if(this.style.opacity == 1.0){
+						$(this).fadeTo(fadeSpeed, fadedOpacity);
+						toggleTalentOff(this.id);
+					}else{
+						$(this).fadeTo(fadeSpeed, 1.0);
+						toggleTalentOn(this.id);
+					}
+				});
+			});
+			
+			//var heroList = document.getElementsByClassName("heroFrame");
+			//var heroListText = document.getElementsByClassName("heroFrame");
+		</script>
+	</div>
+	<div id="article">
+		<h1>By Michael Salata</h1>
+		<p>This was done to learn basic HTML, CSS, javascript and jQuery. Talent groups aren't correct atm.	</p>
+		<p id="wtfTEST">TEST OUTPUT</p>
+		<button onclick=toggleBlock()>"Highlight Block List"</button>
+		<!-- <button onclick=setAllHeroOpacity("0.4")>"Darken all heroes"</button> -->
+		<!-- <button onclick=(document.getElementById( "wtfTEST" ).innerHTML = heroListText)>"List All Heroes"</button> -->
+		<button onclick=updateHighlights()>"updateHighlights"</button>
+	</div>
+	<footer id="copyrightFooter">
+		Copyright © Michael Salata
+	</footer>
+</body>
+
+</html>
